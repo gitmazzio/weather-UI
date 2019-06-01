@@ -1,0 +1,14 @@
+input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(100%, 100%, 100%, 0.6);
+    box-sizing: border-box;
+}
+
+.button-search {
+    margin: -25%;
+    position: relative;
+}

@@ -1,0 +1,30 @@
+.weather {
+    height: 100vh;
+}
+
+.scenario {
+    height: 100%;
+    padding: 20px;
+}
+
+.scenario h1 {
+    font-weight: 100;
+    font-size: 50pt;
+    margin: 0;
+}
+
+header {
+    height: 400px;
+}
+
+.scenario.sun {
+    background: #0CE6FE;
+}
+
+.scenario.clear {
+    background: rgb(226, 252, 255);
+}
+
+.scenario.clouds {
+    background: #C2D7D9;
+}

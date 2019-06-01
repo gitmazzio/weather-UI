@@ -1,0 +1,13 @@
+.badge {
+    width: 100px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.badge h4 {
+    margin: 0;
+}
+
+.badge p {
+    margin: 0;
+}
