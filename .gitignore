@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 README.md.bak
+README.1.md
+
+src/inputCity/cities.json
+
+src/inputCity/img/

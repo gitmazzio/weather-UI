@@ -1,5 +1,6 @@
 .weather {
     height: 100vh;
+    transition: all 0.5s ease;
 }
 
 .scenario {
@@ -8,23 +9,41 @@
 }
 
 .scenario h1 {
-    font-weight: 100;
-    font-size: 50pt;
+    font-weight: 200;
+    font-size: 100px;
     margin: 0;
 }
 
 header {
-    height: 400px;
+    height: calc(100vh - 250px);
 }
 
 .scenario.sun {
-    background: #0CE6FE;
+    background: linear-gradient(#0CE6FE, #0CE6FE, #FFF);
 }
 
 .scenario.clear {
-    background: rgb(226, 252, 255);
+    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
 }
 
 .scenario.clouds {
-    background: #C2D7D9;
+    background: linear-gradient(#C2D7D9, #C2D7D9, #FFF);
+}
+
+.current_temp {
+    margin-bottom: 0;
+}
+
+.current_temp__max {
+    font-size: 50px;
+}
+
+.current_temp__min {
+    font-size: 30px;
+}
+
+.current_temp--label {
+    font-size: 13px;
+    padding-right: 10px;
+    font-weight: bold
 }

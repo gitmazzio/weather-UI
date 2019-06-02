@@ -15,19 +15,21 @@ class Weather extends React.Component {
             city: null,
             listOfItems: null,
             API_URL: 'https://openweathermap.org/data/2.5',
-            inputCity: 'milan'
+            inputCity: '',
+            defaultCity: 'Milan'
         }
     }
 
     componentWillMount() {
-        this.getCity();
+        this.getCity(this.state.defaultCity);
     }
 
 
-    getCity = () => {
-        fetch(`${this.state.API_URL}/weather?q=${this.state.inputCity}&appid=b6907d289e10d714a6e88b30761fae22&units=metric`)
+    getCity = (city) => {
+        fetch(`${this.state.API_URL}/weather?q=${city}&appid=b6907d289e10d714a6e88b30761fae22&units=metric`)
             .then(response => response.json())
-            .then(data => this.getWeather(data.id));
+            .then(data => this.getWeather(data.id))
+            .catch((err) => console.log(err))
     }
 
     getWeather = (id) => {
@@ -40,20 +42,30 @@ class Weather extends React.Component {
                 this.setState({ city: data.city.name })
                 this.setState({ listOfItems: data.list })
             });
+
+        this.forceUpdate();
     }
 
     getScenario = () => {
         return 'scenario ' + this.state.data.list[0].weather[0].main.toLowerCase();
-
     }
+
+    handleCity = (value) => {
+        this.setState({
+            inputCity: value
+        });
+        this.getCity(value);
+    }
+
+    getActualCity = () => this.state.city;
 
     render() {
         return (
             this.state.listOfItems ?
                 <div className="weather">
                     <div className={this.getScenario()}>
-                        <InputCity />
-                        <CurrentDayHeader city={this.state.city} wday={this.state.data.list[0]} />
+                        <InputCity handlerFromParent={this.handleCity} API_URL={this.state.API_URL} />
+                        <CurrentDayHeader city={this.getActualCity()} wday={this.state.data.list[0]} dayTime={this.state.listOfItems[0].dt} />
                         <BadgeContainer list={this.state.listOfItems} />
                     </div>
                 </div>

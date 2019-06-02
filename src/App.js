@@ -1,11 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Title from './title/Title';
-import Counter from './counter/Counter';
-import FormTitle from './formTitle/FormTitle';
 import Weather from './weather/Weather';
 
+import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,42 +15,17 @@ class App extends React.Component {
 
   setName = (e) => {
     // console.log('title', e.target.value)
-    this.setState({ name: capitalize(e.target.value) })
+    this.setState({
+      name: capitalize(e.target.value)
+    })
   }
 
   render() {
-    let title;
-    if (!this.state.name) {
-      title = null;
-    } else {
-      title = <Title name={this.state.name} />;
-    }
 
-    return (
-      <div className="App">
-        {/*  <header className="App-header">
-          {title}
-          <Counter />
-          <FormTitle onChange={this.setName} />
+    return (<div className="App" >
+      <Weather />
 
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-        </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-        </a>
-        </header> */}
-
-
-        <Weather />
-
-      </div>
+    </div>
     );
   }
 }
