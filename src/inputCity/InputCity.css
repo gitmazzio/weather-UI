@@ -22,16 +22,30 @@ input:focus {
 .input-arrow {
     /* background-image: url(img/arrow.png); */
     left: 104vw;
-    position: absolute;
-    z-index: 100;
+    position: relative;
     -webkit-transition: left 0.3s;
     /* Safari */
     transition: left 0.3s;
+    top: -30px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-input:focus+.input-arrow {
-    /* FIX lato destro della pagina 
-    https://www.google.com/search?q=elem+out+of+screen+css
-    */
-    left: calc(100vw - 90px)
+input:focus-within+.input-arrow {
+    height: auto;
+    width: auto;
+    left: calc(100vw - 120px);
+    overflow: auto;
+}
+
+/* 
+.input-arrow:hover {
+    font-weight: 600;
+} */
+
+.input-fields {
+    padding: 20px;
+    height: 72px;
 }

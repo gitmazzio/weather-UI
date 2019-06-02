@@ -5,7 +5,7 @@
 
 .scenario {
     height: 100%;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .scenario h1 {
@@ -16,6 +16,7 @@
 
 header {
     height: calc(100vh - 250px);
+    padding: 0 20px;
 }
 
 .scenario.sun {
@@ -26,8 +27,51 @@ header {
     background: linear-gradient(#e2fcff, #e2fcff, #FFF);
 }
 
+.image-clear {
+    background-image: url('/png/clear.png');
+    background-repeat: no-repeat;
+    animation: shift-backgroud 20s;
+    background-position-x: 35vw;
+
+}
+
 .scenario.clouds {
     background: linear-gradient(#C2D7D9, #C2D7D9, #FFF);
+}
+
+.image-clouds {
+    background-image: url('/png/clouds.png');
+    background-repeat: no-repeat;
+    animation: shift-backgroud 20s;
+    background-position-x: 35vw;
+
+}
+
+.scenario.rain {
+    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+}
+
+.image-rain {
+    background-image: url('/png/rain.png');
+    background-repeat: no-repeat;
+    animation: shift-backgroud 20s;
+    background-position-x: 35vw;
+
+}
+
+@keyframes shift-backgroud {
+    0% {
+        background-position-x: 70vw;
+    }
+
+    /* 
+    75% {
+        background-position-x: 25vw;
+    } */
+
+    100% {
+        background-position-x: 35vw;
+    }
 }
 
 .current_temp {

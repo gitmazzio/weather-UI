@@ -15,6 +15,7 @@ class InputCity extends Component {
 
     submitHandler = (evt) => {
         evt.preventDefault();
+        console.log('click')
 
         this.props.handlerFromParent(this.state.inputCity);
         this.setState({
@@ -36,11 +37,13 @@ class InputCity extends Component {
     }
 
     render() {
-        return (<div>
+        return (<div className="input-fields">
             <input type='text' placeholder='Search a city...' className="col-12" onChange={this.handleChange} value={this.state.inputCity}></input>
 
-            <label for={this.state.inputCity} onClick={this.submitHandler} className="input-arrow">
-                search
+            <label htmlFor={this.state.inputCity} className="input-arrow" onClick={this.submitHandler}>
+                <span >
+                    Search
+                </span>
                 {/* <Button variant="primary" size="sm" xs className='button-search col-4' >Search</Button> */}
             </label>
         </div>

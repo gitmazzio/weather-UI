@@ -6,6 +6,7 @@ import InputCity from './../inputCity/InputCity';
 /* URL https://openweathermap.org/ */
 
 import './Weather.css'
+import Loading from '../loading/Loading';
 
 class Weather extends React.Component {
     constructor(props) {
@@ -47,7 +48,7 @@ class Weather extends React.Component {
     }
 
     getScenario = () => {
-        return 'scenario ' + this.state.data.list[0].weather[0].main.toLowerCase();
+        return 'scenario image ' + this.state.data.list[0].weather[0].main.toLowerCase();
     }
 
     handleCity = (value) => {
@@ -65,11 +66,11 @@ class Weather extends React.Component {
                 <div className="weather">
                     <div className={this.getScenario()}>
                         <InputCity handlerFromParent={this.handleCity} API_URL={this.state.API_URL} />
-                        <CurrentDayHeader city={this.getActualCity()} wday={this.state.data.list[0]} dayTime={this.state.listOfItems[0].dt} />
+                        <CurrentDayHeader city={this.getActualCity()} weather={this.state.data.list[0].weather[0].main.toLowerCase()} wday={this.state.data.list[0]} dayTime={this.state.listOfItems[0].dt} />
                         <BadgeContainer list={this.state.listOfItems} />
                     </div>
                 </div>
-                : <h2>Loading...</h2>
+                : <Loading />
         )
     }
 }
