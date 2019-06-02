@@ -1,24 +1,49 @@
 import React, { Component } from 'react';
 import './InputCity.css';
 
+import { Button } from 'react-bootstrap';
+
+
 class InputCity extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            inputCity: null
+            inputCity: '',
+            cities: null,
         }
     }
 
-    handleCityInput = () => {
-        console.log('ciao');
+    submitHandler = (evt) => {
+        evt.preventDefault();
+
+        this.props.handlerFromParent(this.state.inputCity);
+        this.setState({
+            inputCity: ''
+        });
+    }
+
+    handleChange = (event) => {
+        //fetch(`${this.state.API_URL}/weather?q=${city}&appid=b6907d289e10d714a6e88b30761fae22&units=metric`)
+        /* fetch(`${this.props.API_URL}/find?callback=jQuery19106863759662683921_1559392207356&q=${event.target.value}&type=like&sort=population&cnt=30&appid=b6907d289e10d714a6e88b30761fae22&`)
+            .then(response => response.json())
+            .then(data => this.setState({ cities: data.list })); */
+
+        /* let findCities = cities.filter(elem => ) */
+
+        this.setState({
+            inputCity: event.target.value
+        });
     }
 
     render() {
-        return (<React.Fragment>
-            <input type='text' placeholder='Insert your city' value={this.state.inputCity}></input>
-            <button className='button-search' onClick={this.handleCityInput()}>Search</button> {/* FIX bottone a destra dentro input
-            FIX anche onClick */}
-        </React.Fragment>
+        return (<div>
+            <input type='text' placeholder='Search a city...' className="col-12" onChange={this.handleChange} value={this.state.inputCity}></input>
+
+            <label for={this.state.inputCity} onClick={this.submitHandler} className="input-arrow">
+                search
+                {/* <Button variant="primary" size="sm" xs className='button-search col-4' >Search</Button> */}
+            </label>
+        </div>
         )
     }
 

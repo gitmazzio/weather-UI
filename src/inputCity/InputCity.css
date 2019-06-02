@@ -1,14 +1,37 @@
 input {
-    width: 100%;
     height: 30px;
     border: none;
     padding: 5px 10px;
-    border-radius: 5px;
-    background: rgba(100%, 100%, 100%, 0.6);
+    border-radius: 7px;
+    background: rgba(100%, 100%, 100%, .3);
     box-sizing: border-box;
+    transition: background 0.3s;
+}
+
+input:focus {
+    background: rgba(100%, 100%, 100%, .9);
+    -webkit-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.75);
 }
 
 .button-search {
-    margin: -25%;
     position: relative;
+}
+
+.input-arrow {
+    /* background-image: url(img/arrow.png); */
+    left: 104vw;
+    position: absolute;
+    z-index: 100;
+    -webkit-transition: left 0.3s;
+    /* Safari */
+    transition: left 0.3s;
+}
+
+input:focus+.input-arrow {
+    /* FIX lato destro della pagina 
+    https://www.google.com/search?q=elem+out+of+screen+css
+    */
+    left: calc(100vw - 90px)
 }
