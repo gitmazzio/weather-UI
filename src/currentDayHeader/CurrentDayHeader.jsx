@@ -5,12 +5,14 @@ class CurrentDayHeader extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            wday: this.props.wday,
+            /* currentWeather: null,
+            currentMainInfo: null,
+            currentSys: null */
         }
     }
 
     getDay = () => {
-        const actualDate = new Date(this.props.dayTime * 1000).toLocaleDateString('it-IT');
+        const actualDate = new Date(this.props.currentWeather.dt * 1000).toLocaleDateString('it-IT');
         const today = new Date();
         let tomorrow = new Date();
         tomorrow.setDate(today.getDate() + 1);
@@ -27,18 +29,28 @@ class CurrentDayHeader extends Component {
     }
 
     getScenario = () => {
-        return 'image-' + this.props.weather;
+        console.log(this.getCurrentWeather().description.replace(/\s/g, '').toLowerCase())
+        return 'header-backgroud image-' + this.getCurrentWeather().description.replace(/\s/g, '').toLowerCase();
+    }
+
+    getMainInfo = () => {
+        return this.props.currentWeather.main;
+    }
+
+    getCurrentWeather = () => {
+        return this.props.currentWeather.weather[0];
     }
 
     render() {
         return (<header className={this.getScenario()}>
-            {/* return `/png/${this.props.data.weather[0].main.toLowerCase()}.png` */}
-
-            {/* <img src="/png/clear.png" alt="" /> */}
             <Badge variant='light'>{this.getDay()}</Badge>
             <h1>{this.props.city}</h1>
-            <p className="current_temp current_temp__max"><span className="current_temp--label">max</span>{Math.ceil(this.props.wday.temp.max)}°C</p>
-            <p className="current_temp current_temp__min"><span className="current_temp--label">min</span>{Math.floor(this.props.wday.temp.min)}°C</p>
+            <p className="w-current__description">{this.getCurrentWeather().description}</p>
+            <p className="current_temp current_temp__max"><span className="current_temp--label">temperature </span>{Math.ceil(this.getMainInfo().temp)}<span className="current_temp--label">°C</span></p>
+            <p className="current_temp current_temp__max"><span className="current_temp--label">wind </span>{this.props.currentWeather.wind.speed}<span className="current_temp--label">km/h</span></p>
+            <p className="current_temp current_temp__max"><span className="current_temp--label">humidity </span>{Math.ceil(this.getMainInfo().humidity)}</p>
+
+
         </header>);
     }
 }

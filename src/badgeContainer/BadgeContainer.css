@@ -5,6 +5,7 @@
     overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    padding: 10px;
 }
 
 /* HIDE SCROLL BAR https://stackoverflow.com/questions/3296644/hiding-the-scrollbar-on-an-html-page */

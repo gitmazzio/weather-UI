@@ -5,72 +5,118 @@
 
 .scenario {
     height: 100%;
-    /* padding: 20px; */
 }
 
 .scenario h1 {
     font-weight: 200;
-    font-size: 100px;
+    font-size: 4rem;
     margin: 0;
 }
 
 header {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 272px);
     padding: 0 20px;
 }
 
-.scenario.sun {
+.header-backgroud {
+    background-repeat: no-repeat;
+    animation: shift-backgroud linear 20s;
+    background-position-x: 35vw;
+    background-size: contain;
+}
+
+.scenario.clearsky {
     background: linear-gradient(#0CE6FE, #0CE6FE, #FFF);
 }
 
-.scenario.clear {
-    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+.header-backgroud.image-clearsky {
+    background-image: url('/png/clearsky.png');
 }
 
-.image-clear {
-    background-image: url('/png/clear.png');
-    background-repeat: no-repeat;
-    animation: shift-backgroud 20s;
-    background-position-x: 35vw;
-
+.scenario.fewclouds {
+    background: linear-gradient(#0CE6FE, #0CE6FE, #FFF);
 }
 
-.scenario.clouds {
+.header-backgroud.image-fewclouds {
+    background-image: url('/png/fewclouds.png');
+}
+
+.scenario.brokenclouds {
     background: linear-gradient(#C2D7D9, #C2D7D9, #FFF);
 }
 
-.image-clouds {
-    background-image: url('/png/clouds.png');
-    background-repeat: no-repeat;
-    animation: shift-backgroud 20s;
-    background-position-x: 35vw;
-
+.header-backgroud.image-brokenclouds {
+    background-image: url('/png/brokenclouds.png');
 }
 
-.scenario.rain {
+.scenario.lightrain {
     background: linear-gradient(#e2fcff, #e2fcff, #FFF);
 }
 
-.image-rain {
-    background-image: url('/png/rain.png');
-    background-repeat: no-repeat;
-    animation: shift-backgroud 20s;
-    background-position-x: 35vw;
+.header-backgroud.image-lightrain {
+    background-image: url('/png/lightrain.png');
+}
 
+.scenario.showerrain {
+    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+}
+
+.header-backgroud.image-showerrain {
+    background-image: url('/png/showerrain.png');
+}
+
+.scenario.scatteredclouds {
+    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+}
+
+.header-backgroud.image-scatteredclouds {
+    background-image: url('/png/scatteredclouds.png');
+}
+
+.scenario.moderaterain {
+    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+}
+
+.header-backgroud.image-moderaterain {
+    background-image: url('/png/moderaterain.png');
+}
+
+.scenario.heavyintensityrain {
+    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+}
+
+.header-backgroud.image-heavyintensityrain {
+    background-image: url('/png/heavyintensityrain.png');
+}
+
+
+.scenario.lightintensityshowerrain {
+    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+}
+
+.header-backgroud.image-lightintensityshowerrain {
+    background-image: url('/png/lightintensityshowerrain.png');
+}
+
+.scenario.overcastclouds {
+    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+}
+
+.header-backgroud.image-overcastclouds {
+    background-image: url('/png/overcastclouds.png');
 }
 
 @keyframes shift-backgroud {
     0% {
-        background-position-x: 70vw;
+        background-position-x: 50vw;
     }
 
-    /* 
-    75% {
-        background-position-x: 25vw;
-    } */
+    50% {
+        background-position-x: 35vw;
+    }
 
     100% {
-        background-position-x: 35vw;
+        background-position-x: 20vw;
     }
 }
 
@@ -90,4 +136,12 @@ header {
     font-size: 13px;
     padding-right: 10px;
     font-weight: bold
+}
+
+.w-current__description {
+    font-size: 12px;
+}
+
+.w-current__description::first-letter {
+    text-transform: capitalize;
 }

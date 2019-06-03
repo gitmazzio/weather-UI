@@ -34,8 +34,9 @@ class BadgeWeather extends React.Component {
     }
 
     getPicUrl = () => {
+        console.log(this.props.data.weather[0].description.replace(/\s/g, '').toLowerCase())
 
-        return `/png/${this.props.data.weather[0].main.toLowerCase()}.png`
+        return `/png/${this.props.data.weather[0].description.replace(/\s/g, '').toLowerCase()}.png`
     }
 
     render() {

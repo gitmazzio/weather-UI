@@ -1,5 +1,6 @@
 input {
     height: 30px;
+    width: 100vw;
     border: none;
     padding: 5px 10px;
     border-radius: 7px;
@@ -19,33 +20,44 @@ input:focus {
     position: relative;
 }
 
-.input-arrow {
-    /* background-image: url(img/arrow.png); */
-    left: 104vw;
-    position: relative;
-    -webkit-transition: left 0.3s;
-    /* Safari */
-    transition: left 0.3s;
-    top: -30px;
-    height: 0;
-    width: 0;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-input:focus-within+.input-arrow {
-    height: auto;
-    width: auto;
-    left: calc(100vw - 120px);
-    overflow: auto;
-}
-
-/* 
-.input-arrow:hover {
-    font-weight: 600;
-} */
-
 .input-fields {
     padding: 20px;
     height: 72px;
+    position: relative;
+}
+
+.cities-list {
+    list-style-type: none;
+    padding: 0;
+    z-index: 11
+}
+
+.cities-list li {
+    cursor: pointer;
+    background: white;
+    padding: 5px 15px;
+}
+
+.cities-list li:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+.search-button {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none !important;
+    cursor: pointer;
+}
+
+.search-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #5a6674;
 }
