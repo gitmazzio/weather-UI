@@ -17,15 +17,16 @@ class BadgeWeather extends React.Component {
     } */
 
     getDay = () => {
-        const actualDate = new Date(this.props.data.dt * 1000).toLocaleDateString('it-IT');
+        const options = { month: '2-digit', day: 'numeric' };
+        const actualDate = new Date(this.props.data.dt * 1000).toLocaleDateString('it-IT', options);
         const today = new Date();
         let tomorrow = new Date();
         tomorrow.setDate(today.getDate() + 1);
 
-        if (actualDate === today.toLocaleDateString('it-IT')) {
+        if (actualDate === today.toLocaleDateString('it-IT', options)) {
             return 'Today'
         }
-        if (actualDate === tomorrow.toLocaleDateString('it-IT')) {
+        if (actualDate === tomorrow.toLocaleDateString('it-IT', options)) {
             return 'Tomorrow';
         }
         else {
@@ -34,15 +35,13 @@ class BadgeWeather extends React.Component {
     }
 
     getPicUrl = () => {
-        console.log(this.props.data.weather[0].description.replace(/\s/g, '').toLowerCase())
-
         return `/png/${this.props.data.weather[0].description.replace(/\s/g, '').toLowerCase()}.png`
     }
 
     render() {
         return (
             <div className="w-badge">
-                <p>{this.getDay()}</p>
+                <p className="w-day">{this.getDay()}</p>
                 <img src={this.getPicUrl()} alt="" className="w-img" />
 
                 <h4>

@@ -1,0 +1,13 @@
+footer {
+    font-size: small;
+    margin: 20px auto;
+    text-align: center;
+}
+
+footer a,
+a:hover,
+a:active,
+a::after {
+    text-decoration: none !important;
+    color: #000000 !important;
+}

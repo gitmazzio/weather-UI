@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './InputCity.css';
+import cities from './cities.json';
 
 class InputCity extends Component {
     constructor(props) {
@@ -19,32 +20,36 @@ class InputCity extends Component {
     }
 
     handleChange = (event) => {
-        const cities = ['Milan', 'London', 'New york'];
-
         const keyword = event.target.value.toLowerCase();
         this.setState({
             inputCity: event.target.value
         });
 
         if (event.target.value === '') {
-            this.setState({ citiesList: null })
+            this.setState({ citiesList: [] });
             return;
         }
 
         const citiesList = cities.filter((city) => {
-            city = city.toLowerCase();
+            city = city.name.toLowerCase();
+            //console.log(city)
             return city.indexOf(keyword) > -1;
-        }).map(elem => <li key={elem} onClick={this.setCity}>{elem}</li>);
+        })
+            .slice(0, 10)
+            .map(elem => <li key={elem.name + elem.subcountry} className="list-city" onClick={this.setCity}>{elem.name}</li>);
 
-        //return
-        this.setState({ citiesList })
+        this.setState({ citiesList });
 
         //fetch(`${this.state.API_URL}/weather?q=${city}&appid=b6907d289e10d714a6e88b30761fae22&units=metric`)
         /* fetch(`${this.props.API_URL}/find?callback=jQuery19106863759662683921_1559392207356&q=${event.target.value}&type=like&sort=population&cnt=30&appid=b6907d289e10d714a6e88b30761fae22&`)
             .then(response => response.json())
             .then(data => this.setState({ cities: data.list })); */
-
     }
+
+
+
+
+
 
     setCity = (evt) => {
         evt.preventDefault();

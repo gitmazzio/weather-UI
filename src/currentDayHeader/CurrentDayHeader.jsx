@@ -29,7 +29,6 @@ class CurrentDayHeader extends Component {
     }
 
     getScenario = () => {
-        console.log(this.getCurrentWeather().description.replace(/\s/g, '').toLowerCase())
         return 'header-backgroud image-' + this.getCurrentWeather().description.replace(/\s/g, '').toLowerCase();
     }
 
@@ -48,9 +47,7 @@ class CurrentDayHeader extends Component {
             <p className="w-current__description">{this.getCurrentWeather().description}</p>
             <p className="current_temp current_temp__max"><span className="current_temp--label">temperature </span>{Math.ceil(this.getMainInfo().temp)}<span className="current_temp--label">°C</span></p>
             <p className="current_temp current_temp__max"><span className="current_temp--label">wind </span>{this.props.currentWeather.wind.speed}<span className="current_temp--label">km/h</span></p>
-            <p className="current_temp current_temp__max"><span className="current_temp--label">humidity </span>{Math.ceil(this.getMainInfo().humidity)}</p>
-
-
+            <p className="current_temp current_temp__max"><span className="current_temp--label">humidity </span>{Math.ceil(this.getMainInfo().humidity)}<span className="current_temp--label">%</span></p>
         </header>);
     }
 }

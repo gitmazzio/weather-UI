@@ -16,6 +16,7 @@
 header {
     height: calc(100vh - 272px);
     padding: 0 20px;
+    min-height: 500px;
 }
 
 .header-backgroud {
@@ -26,7 +27,7 @@ header {
 }
 
 .scenario.clearsky {
-    background: linear-gradient(#0CE6FE, #0CE6FE, #FFF);
+    background: linear-gradient(#2196f3, #2196f3, #FFF);
 }
 
 .header-backgroud.image-clearsky {
@@ -34,7 +35,7 @@ header {
 }
 
 .scenario.fewclouds {
-    background: linear-gradient(#0CE6FE, #0CE6FE, #FFF);
+    background: linear-gradient(#2196f3, #2196f3, #FFF);
 }
 
 .header-backgroud.image-fewclouds {
@@ -42,7 +43,7 @@ header {
 }
 
 .scenario.brokenclouds {
-    background: linear-gradient(#C2D7D9, #C2D7D9, #FFF);
+    background: linear-gradient(#1769aa, #1769aa, #FFF);
 }
 
 .header-backgroud.image-brokenclouds {
@@ -50,7 +51,7 @@ header {
 }
 
 .scenario.lightrain {
-    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+    background: linear-gradient(#0276aa, #0276aa, #FFF);
 }
 
 .header-backgroud.image-lightrain {
@@ -58,7 +59,7 @@ header {
 }
 
 .scenario.showerrain {
-    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+    background: linear-gradient(#0276aa, #0276aa, #FFF);
 }
 
 .header-backgroud.image-showerrain {
@@ -66,7 +67,7 @@ header {
 }
 
 .scenario.scatteredclouds {
-    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+    background: linear-gradient(#0276aa, #0276aa, #FFF);
 }
 
 .header-backgroud.image-scatteredclouds {
@@ -74,7 +75,7 @@ header {
 }
 
 .scenario.moderaterain {
-    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+    background: linear-gradient(#0276aa, #0276aa, #FFF);
 }
 
 .header-backgroud.image-moderaterain {
@@ -82,7 +83,7 @@ header {
 }
 
 .scenario.heavyintensityrain {
-    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+    background: linear-gradient(#0276aa, #0276aa, #FFF);
 }
 
 .header-backgroud.image-heavyintensityrain {
@@ -91,7 +92,7 @@ header {
 
 
 .scenario.lightintensityshowerrain {
-    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+    background: linear-gradient(#0276aa, #0276aa, #FFF);
 }
 
 .header-backgroud.image-lightintensityshowerrain {
@@ -99,7 +100,7 @@ header {
 }
 
 .scenario.overcastclouds {
-    background: linear-gradient(#e2fcff, #e2fcff, #FFF);
+    background: linear-gradient(#0276aa, #0276aa, #FFF);
 }
 
 .header-backgroud.image-overcastclouds {
@@ -144,4 +145,8 @@ header {
 
 .w-current__description::first-letter {
     text-transform: capitalize;
+}
+
+.badge-container::-webkit-scrollbar {
+    display: none;
 }
