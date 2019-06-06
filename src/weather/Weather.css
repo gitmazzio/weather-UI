@@ -50,6 +50,14 @@ header {
     background-image: url('/png/mist.png');
 }
 
+.scenario.thunderstorm {
+    background: linear-gradient(#2196f3, #2196f3, #FFF);
+}
+
+.header-backgroud.image-thunderstorm {
+    background-image: url('/png/thunderstorm.png');
+}
+
 .scenario.scatteredclouds {
     background: linear-gradient(#0276aa, #0276aa, #FFF);
 }

@@ -17,7 +17,7 @@ class FooterWeather extends Component {
 
             </p>
             <span>
-                Made by <a target="_blank" rel="noopener noreferrer" href="http://matteomazziotti.it" className="me">Matteo Mazziotti</a> with <span role="img" aria-label="heart">❤️</span> with
+                Made by <a target="_blank" rel="noopener noreferrer" href="https://matteomazziotti.it" className="me">Matteo Mazziotti</a> with <span role="img" aria-label="heart">❤️</span> with
       <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org/https://github.com/vuejs/vue"> React</a>
             </span>
         </footer >);
