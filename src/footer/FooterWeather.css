@@ -11,3 +11,8 @@ a::after {
     text-decoration: none !important;
     color: #000000 !important;
 }
+
+
+footer a.me:hover {
+    font-weight: 700;
+}

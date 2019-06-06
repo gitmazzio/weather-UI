@@ -1,0 +1,26 @@
+body.search-active {
+    overflow: hidden;
+}
+
+body.search-active .search-input {
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+}
+
+body.search-active .icon-close {
+    opacity: 1;
+    transform: rotate(-90deg);
+}
+
+body.search-active .control {
+    cursor: default;
+}
+
+body.search-active .control .btn-material {
+    transform: scale(70);
+}
+
+body.search-active .control .icon-material-search {
+    opacity: 0;
+}

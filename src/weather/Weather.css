@@ -42,6 +42,22 @@ header {
     background-image: url('/png/fewclouds.png');
 }
 
+.scenario.mist {
+    background: linear-gradient(#2196f3, #2196f3, #FFF);
+}
+
+.header-backgroud.image-mist {
+    background-image: url('/png/mist.png');
+}
+
+.scenario.scatteredclouds {
+    background: linear-gradient(#0276aa, #0276aa, #FFF);
+}
+
+.header-backgroud.image-scatteredclouds {
+    background-image: url('/png/scatteredclouds.png');
+}
+
 .scenario.brokenclouds {
     background: linear-gradient(#1769aa, #1769aa, #FFF);
 }
@@ -66,14 +82,6 @@ header {
     background-image: url('/png/showerrain.png');
 }
 
-.scenario.scatteredclouds {
-    background: linear-gradient(#0276aa, #0276aa, #FFF);
-}
-
-.header-backgroud.image-scatteredclouds {
-    background-image: url('/png/scatteredclouds.png');
-}
-
 .scenario.moderaterain {
     background: linear-gradient(#0276aa, #0276aa, #FFF);
 }
@@ -89,7 +97,6 @@ header {
 .header-backgroud.image-heavyintensityrain {
     background-image: url('/png/heavyintensityrain.png');
 }
-
 
 .scenario.lightintensityshowerrain {
     background: linear-gradient(#0276aa, #0276aa, #FFF);
@@ -149,4 +156,13 @@ header {
 
 .badge-container::-webkit-scrollbar {
     display: none;
+}
+
+.button-details {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }

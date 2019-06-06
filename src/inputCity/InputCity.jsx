@@ -17,6 +17,7 @@ class InputCity extends Component {
         this.setState({
             inputCity: ''
         });
+        this.setState({ citiesList: null })
     }
 
     handleChange = (event) => {
@@ -31,25 +32,12 @@ class InputCity extends Component {
         }
 
         const citiesList = cities.filter((city) => {
-            city = city.name.toLowerCase();
-            //console.log(city)
-            return city.indexOf(keyword) > -1;
+            return city.name.toLowerCase().indexOf(keyword) > -1;
         })
             .slice(0, 10)
             .map(elem => <li key={elem.name + elem.subcountry} className="list-city" onClick={this.setCity}>{elem.name}</li>);
-
         this.setState({ citiesList });
-
-        //fetch(`${this.state.API_URL}/weather?q=${city}&appid=b6907d289e10d714a6e88b30761fae22&units=metric`)
-        /* fetch(`${this.props.API_URL}/find?callback=jQuery19106863759662683921_1559392207356&q=${event.target.value}&type=like&sort=population&cnt=30&appid=b6907d289e10d714a6e88b30761fae22&`)
-            .then(response => response.json())
-            .then(data => this.setState({ cities: data.list })); */
     }
-
-
-
-
-
 
     setCity = (evt) => {
         evt.preventDefault();
@@ -64,7 +52,6 @@ class InputCity extends Component {
         this.setState({ citiesList: null })
     }
 
-
     handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             this.submitHandler();
@@ -73,10 +60,10 @@ class InputCity extends Component {
 
     render() {
         return (<div className="input-fields" onKeyPress={this.handleKeyPress}>
-            <input type='text' placeholder='Search city...' className="col-12" onChange={this.handleChange} value={this.state.inputCity} />
-            {/* <button type="submit" className="search-button">
-                <svg class="submit-button"></svg> ciao
-                      </button>*/}
+            <span>
+                <i class="fa fa-search"></i>
+            </span>
+            <input type='text' placeholder='Search city...' onChange={this.handleChange} value={this.state.inputCity} />
             <ul className="cities-list">{this.state.citiesList}</ul>
         </div >);
     }

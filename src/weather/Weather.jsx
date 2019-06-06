@@ -3,6 +3,7 @@ import BadgeContainer from './../badgeContainer/BadgeContainer';
 import CurrentDayHeader from './../currentDayHeader/CurrentDayHeader';
 import InputCity from './../inputCity/InputCity';
 import FooterWeather from './../footer/FooterWeather';
+import 'bootstrap/dist/css/bootstrap.css'
 
 /* URL https://openweathermap.org/ */
 
@@ -71,7 +72,7 @@ class Weather extends React.Component {
                 <div className="weather">
                     <div className={this.getScenario()}>
                         <InputCity handlerFromParent={this.handleCity} API_URL={this.state.API_URL} />
-                        <CurrentDayHeader city={this.getActualCity()} API_URL={this.state.API_URL} currentWeather={this.state.dataCurrentWeather}/* weather={this.state.data10days.list[0].weather[0].main.toLowerCase()} wday={this.state.data10days.list[0]} dayTime={this.state.listOfItems10days[0].dt} */ />
+                        <CurrentDayHeader city={this.getActualCity()} idCity={this.state.dataCurrentWeather.id} API_URL={this.state.API_URL} currentWeather={this.state.dataCurrentWeather}/* weather={this.state.data10days.list[0].weather[0].main.toLowerCase()} wday={this.state.data10days.list[0]} dayTime={this.state.listOfItems10days[0].dt} */ />
                         <BadgeContainer list={this.state.listOfItems10days} />
                         <FooterWeather />
                     </div>
