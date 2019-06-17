@@ -6,6 +6,9 @@
   </a>
 </p>
 
+## Description
+Weather UI written using React
+
 ### 🏠 [Homepage](http://weather.matteomazziotti.it/)
 
 ## Install
