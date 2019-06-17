@@ -69,4 +69,4 @@ class InputCity extends Component {
     }
 }
 
-export default InputCity;                        
+export default InputCity;
