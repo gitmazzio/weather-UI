@@ -4,7 +4,7 @@ import CurrentDayHeader from './../currentDayHeader/CurrentDayHeader';
 import InputCity from './../inputCity/InputCity';
 import FooterWeather from './../footer/FooterWeather';
 import 'bootstrap/dist/css/bootstrap.css'
-
+const API_KEY = "2f160ed350608bf4606837dc569ac390"
 /* URL https://openweathermap.org/ */
 
 import './Weather.css'
@@ -30,10 +30,12 @@ class Weather extends React.Component {
 
 
     getCity = (city) => {
-        fetch(`${this.state.API_URL}/weather?q=${city}&appid=b6907d289e10d714a6e88b30761fae22&units=metric`)
+        fetch(`${this.state.API_URL}/weather?q=${city}&appid=${API_KEY}&units=metric`)
             .then(response => response.json())
             .then(data => {
-                this.setState({ dataCurrentWeather: data })
+                this.setState({
+                    dataCurrentWeather: data
+                })
                 this.getWeather(data.id)
             })
             .catch((err) => console.log(err))
@@ -41,12 +43,18 @@ class Weather extends React.Component {
 
     getWeather = (id) => {
         //api.openweathermap.org/data/2.5/forecast/daily?id={city ID}&cnt={cnt}
-        fetch(`${this.state.API_URL}/forecast/daily?id=${id}&cnt=10&appid=b6907d289e10d714a6e88b30761fae22&units=metric`)
+        fetch(`${this.state.API_URL}/forecast/daily?id=${id}&cnt=10&appid=${API_KEY}&units=metric`)
             .then(response => response.json())
             .then(data => {
-                this.setState({ data10days: data })
-                this.setState({ city: data.city.name })
-                this.setState({ listOfItems10days: data.list })
+                this.setState({
+                    data10days: data
+                })
+                this.setState({
+                    city: data.city.name
+                })
+                this.setState({
+                    listOfItems10days: data.list
+                })
             })
             .catch((err) => console.log(err))
 
@@ -69,15 +77,43 @@ class Weather extends React.Component {
     render() {
         return (
             this.state.listOfItems10days ?
-                <div className="weather">
-                    <div className={this.getScenario()}>
-                        <InputCity handlerFromParent={this.handleCity} API_URL={this.state.API_URL} />
-                        <CurrentDayHeader city={this.getActualCity()} idCity={this.state.dataCurrentWeather.id} API_URL={this.state.API_URL} currentWeather={this.state.dataCurrentWeather}/* weather={this.state.data10days.list[0].weather[0].main.toLowerCase()} wday={this.state.data10days.list[0]} dayTime={this.state.listOfItems10days[0].dt} */ />
-                        <BadgeContainer list={this.state.listOfItems10days} />
-                        <FooterWeather />
-                    </div>
-                </div>
-                : <Loading />
+            <
+            div className = "weather" >
+            <
+            div className = {
+                this.getScenario()
+            } >
+            <
+            InputCity handlerFromParent = {
+                this.handleCity
+            }
+            API_URL = {
+                this.state.API_URL
+            }
+            /> <
+            CurrentDayHeader city = {
+                this.getActualCity()
+            }
+            idCity = {
+                this.state.dataCurrentWeather.id
+            }
+            API_URL = {
+                this.state.API_URL
+            }
+            currentWeather = {
+                this.state.dataCurrentWeather
+            } /* weather={this.state.data10days.list[0].weather[0].main.toLowerCase()} wday={this.state.data10days.list[0]} dayTime={this.state.listOfItems10days[0].dt} */
+            /> <
+            BadgeContainer list = {
+                this.state.listOfItems10days
+            }
+            /> <
+            FooterWeather / >
+            <
+            /div> < /
+            div > :
+            <
+            Loading / >
         )
     }
 }
